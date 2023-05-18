@@ -4,7 +4,7 @@ Intro
 Overview
 ------------
 
-JRI Viewer is a stand-alone Pg-PHP application for viewing and exporting Jasper Reports on demand.
+JRI Viewer is a stand-alone PG-PHP application for viewing and exporting Jasper Reports on demand.
 
 It does not require JRI Publisher and can be used with any (and multiple) instances of `JasperReportsIntegration`_
 
