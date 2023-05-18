@@ -10,11 +10,9 @@ It does not require JRI Publisher and can be used with any (and multiple) instan
 
 .. _`JasperReportsIntegration`: https://github.com/daust/JasperReportsIntegration 
 
-It also provides Publishing, Scheduling, Email Formatting, and Report Management.
+It supports Users, Groups, and report-level permissions.
 
-It can be used with or without Oracle APEX.
-
-In additional to Oracle, JRI Publisher includes one-click JNDI support for PostgreSQL, MySQL, and SQL Server.
+In additional to Jasper reports, there is also a PostGIS and pg_featursev report option.
 
 .. image:: _static/JRIViewer-Main.png
 
