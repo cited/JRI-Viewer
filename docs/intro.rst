@@ -4,7 +4,9 @@ Intro
 Overview
 ------------
 
-JRI Publisher is a Webmin module that installs, configures, and manages Tomcat, Java, and `JasperReportsIntegration`_
+JRI Viewer is a stand-alone Pg-PHP application for viewing and exporting Jasper Reports on demand.
+
+It does not require JRI Publisher and can be used with any (and multiple) instances of `JasperReportsIntegration`_
 
 .. _`JasperReportsIntegration`: https://github.com/daust/JasperReportsIntegration 
 
@@ -17,23 +19,12 @@ In additional to Oracle, JRI Publisher includes one-click JNDI support for Postg
 .. image:: _static/JRI-Publisher-Main.png
 
 
-Use Cases
-------------
-* Those looking to get up and running quickly and easily with `JasperReportsIntegration`_
-.. _`JasperReportsIntegration`: https://github.com/daust/JasperReportsIntegration 
-* Those looking for the advanced functionality JRI Publisher adds to  `JasperReportsIntegration`_ (UI, Scheduling, Email Templates, and Dashboard)
-.. _`JasperReportsIntegration`: https://github.com/daust/JasperReportsIntegration  
-* **Non-APEX** Oracle, PostgreSQL, MySQL, and MSSQL users who want a Jasper reporting solution.   While  `JasperReportsIntegration`_ was designed for Oracle APEX (and can be used with Oracle APEX), JRI Publisher does **not** require APEX or installing the JRI SQL objects.
-.. _`JasperReportsIntegration`: https://github.com/daust/JasperReportsIntegration  
-
-
 System Requirements
 -------------------
-* CentOS 8 or 
-* Ubuntu 18 or 20
-* Postfix
-* 1 GB Ram
-* 10 GB SSD
+* CentOS 7 or 
+* Ubuntu 22
+* PostgreSQL
+* PHP
 
 Authors
 -------
@@ -44,42 +35,6 @@ Authors
 .. _`Kaloyan Petrov`: https://github.com/kaloyan13
 
 
-
-Components
-----------
-
-`JasperReportsIntegration`_
-
-.. _`JasperReportsIntegration`: https://github.com/daust/JasperReportsIntegration 
-
-`Jasper Reports Library`_
-
-.. _`Jasper Reports Library`: https://community.jaspersoft.com/project/jasperreports-library 
-
-`Apache Tomcat`_
-
-.. _`Apache Tomcat`: http://tomcat.apache.org/ 
-
-`OpenJDK`_
-
-.. _`OpenJDK`: https://openjdk.java.net/
-
-`PostgreSQL JDBC`_
-
-.. _`PostgreSQL JDBC`: https://jdbc.postgresql.org/
-
-`MySQL JDBC`_
-
-.. _`MySQL JDBC`: https://dev.mysql.com/downloads/connector/j/
-
-`Microsoft SQL Server JDBC`_
-
-.. _`Microsoft SQL Server JDBC`: https://docs.microsoft.com/en-us/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15
- 
-
-`Responsive HTML Email Templates`_
-
-.. _`Responsive HTML Email Templates`: https://github.com/leemunroe/responsive-html-email-template
 
 Open Source
 -----------
