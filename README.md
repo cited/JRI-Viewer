@@ -1,3 +1,3 @@
 # JRI Viewer
 
-.. image:: docs/_static/JRIViewer-Main.png
+![JRI Viewer](docs/_static/JRIViewer-Main.png)
