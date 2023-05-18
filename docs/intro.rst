@@ -21,10 +21,8 @@ In additional to Oracle, JRI Publisher includes one-click JNDI support for Postg
 
 System Requirements
 -------------------
-* CentOS 7 or 
-* Ubuntu 22
 * PostgreSQL
-* PHP
+* PHP >= 8.0
 
 Authors
 -------
