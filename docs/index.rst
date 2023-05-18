@@ -1,4 +1,4 @@
-JRI Publisher
+JRI Viewer
 ==================================================
 
 .. image:: _static/JRI-Publisher-Main.png
