@@ -16,7 +16,7 @@ It can be used with or without Oracle APEX.
 
 In additional to Oracle, JRI Publisher includes one-click JNDI support for PostgreSQL, MySQL, and SQL Server.
 
-.. image:: _static/JRI-Viewer-Main.png
+.. image:: _static/JRIViewer-Main.png
 
 
 System Requirements
