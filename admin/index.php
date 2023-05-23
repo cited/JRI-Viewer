@@ -143,7 +143,7 @@ text-decoration:none!important;
             </div>
             <div class="col-md-4 col-xl-2 d-flex align-items-stretch">
               <a
-                href="show_inputs.php"
+                href="show_input.php"
                 class="card bg-primary text-white w-100 card-hover"
               >
                 <div class="card-body">
