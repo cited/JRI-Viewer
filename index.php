@@ -28,6 +28,7 @@
 
 		# reports from access groups
 		$group_rows = array();
+		$rows1 = array();
 		if(count($usr_grps)){
 			# get report IDs from access groups
 			$usr_reps = $acc_obj->getGroupReports(array_keys($usr_grps));
