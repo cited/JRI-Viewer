@@ -28,15 +28,15 @@ if(isset($_POST['submit'])){
 	}else{
 		copy("class/database.config.php","class/database.php");
 		$file="db_conn.php";
-		file_put_contents($file,str_replace("db_host",$host,file_get_contents($file)));
-		file_put_contents($file,str_replace("db_port",$port,file_get_contents($file)));
-		file_put_contents($file,str_replace("db_username",$dbuname,file_get_contents($file)));
-		file_put_contents($file,str_replace("db_password",$dbpwd,file_get_contents($file)));
-		file_put_contents($file,str_replace("db_name",$dbname,file_get_contents($file)));
-		file_put_contents($file,str_replace("db_name",$dbname,file_get_contents($file)));
+		$file_data = file_get_contents($file);
 
-	
+		$file_data = str_replace("db_host",$host, 				$file_data);
+		$file_data = str_replace("db_port",$port, 				$file_data);
+		$file_data = str_replace("db_username",$dbuname,	$file_data);
+		$file_data = str_replace("db_password",$dbpwd,		$file_data);
+		$file_data = str_replace("db_name",$dbname, 			$file_data);
 
+		file_put_contents($file, $file_data);
 
 $sql="CREATE TYPE public.level AS ENUM (
     'User',
@@ -298,7 +298,7 @@ $sql="INSERT INTO public.user VALUES
 
 
 
-		
+
 		header('location:index.php');
 	}
 }
