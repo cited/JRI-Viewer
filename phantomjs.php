@@ -5,6 +5,8 @@
 		require_once('admin/class/user.php');
 		require_once('admin/class/access_groups.php');
 
+		define('PHANTOMJS_BIN', '/usr/local/bin/phantomjs');	// Update with the path to your PhantomJS binary
+
     session_start();
     if(!isset($_SESSION['user'])) {
         header('Location: login.php');
@@ -12,7 +14,7 @@
     }
 
     $database = new Database(DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT, DB_SCMA);
-		$dbconn = $database->getConn(); 
+		$dbconn = $database->getConn();
     $ids = [];
 
     if(isset($_GET['group_id']) && intval($_GET['group_id'])) {
@@ -65,15 +67,15 @@
 
 
     $_GET['phantomjs'] = 'true';
-    $url = 'https://geoexhibit.com/viewer-only5/view.php?'.http_build_query($_GET);
-    $html = file_get_contents($url);
-    // die($html);
-
+	
+		$proto = isset($_SERVER['HTTPS']) ? 'https' : 'http';
+    $url = $proto.'://'.$_SERVER['SERVER_NAME'].str_replace('phantomjs.php', 'view.php', $_SERVER['SCRIPT_NAME']).'?'.http_build_query($_GET);
 
     $rand = time().'-'.rand();
     // Set the paths to PhantomJS and the conversion script
-    $phantomjs = '/usr/bin/phantomjs'; // Update with the path to your PhantomJS binary
-    $conversionScript = '/home/exhibit1836/public_html/viewer-only5/phantomjs.js'; // Update with the path to your PhantomJS conversion script
+    $conversionScript = __DIR__.'/phantomjs.js'; // Update with the path to your PhantomJS conversion script
+		$htmlFile					= __DIR__.'/'.$rand.'.html'; //tempnam(sys_get_temp_dir(), 'html');
+		$pdfFile					= __DIR__.'/'.$rand.'.pdf'; //tempnam(sys_get_temp_dir(), 'pdf');
 
     // Set the HTML code to convert to PDF
      $html = '<style>
@@ -89,17 +91,13 @@
                         zoom: 0.68;
                         /*margin-left: -100px;*/
                     }
-              </style>'.
-              $html;
-    //die($html);
+              </style>'. file_get_contents($url);
+
     // Save the HTML to a file
-    $htmlFile = '/home/exhibit1836/public_html/viewer-only5/'.$rand.'.html'; //tempnam(sys_get_temp_dir(), 'html');
     file_put_contents($htmlFile, $html);
 
     // Execute PhantomJS to convert the HTML to PDF
-    $pdfFile = '/home/exhibit1836/public_html/viewer-only5/'.$rand.'.pdf'; //tempnam(sys_get_temp_dir(), 'pdf');
-    exec("$phantomjs $conversionScript $htmlFile $pdfFile");
-
+    exec('OPENSSL_CONF=/etc/ssl '.PHANTOMJS_BIN." $conversionScript $htmlFile $pdfFile");
 
     $name = date('Y-m-d_H_i_s').'.pdf';
     // Output the PDF file
@@ -108,8 +106,8 @@
     echo readfile($pdfFile);
 
     // Clean up the temporary files
-    unlink($htmlFile);
-    unlink($pdfFile);
+    #unlink($htmlFile);
+    #unlink($pdfFile);
 
 
 
