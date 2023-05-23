@@ -40,13 +40,7 @@ text-decoration:none!important;
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+   
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
 
@@ -54,13 +48,9 @@ text-decoration:none!important;
 					include("incl/topbar.php");
 					include("incl/sidebar.php");
 				?>
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+       
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
+            
             <div class="page-breadcrumb" style="padding-left:30px; padding-right: 30px; padding-top:0px; padding-bottom: 0px">
                 <div class="row align-items-center">
                     <div class="col-6">
@@ -72,12 +62,7 @@ text-decoration:none!important;
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+           
             <div class="container-fluid">
 
 				<!-- 7. Stats card --><div class="row">
@@ -114,7 +99,7 @@ text-decoration:none!important;
             </div>
             <div class="col-md-4 col-xl-2 d-flex align-items-stretch">
               <a
-                href="groups.php"
+                href="parameters.php"
                 class="card bg-warning text-white w-100 card-hover"
               >
                 <div class="card-body">
@@ -125,9 +110,9 @@ text-decoration:none!important;
                     </div>
                   </div>
                   <div class="mt-4">
-                    <h4 class="card-title mb-1 text-white">Report Groups</h4>
+                    <h4 class="card-title mb-1 text-white">Parameters</h4>
                     <h6 class="card-text fw-normal text-white-50">
-                      Add and edit Report Groups
+                      Add and edit Parameters
                     </h6>
                   </div>
                 </div>
@@ -135,7 +120,7 @@ text-decoration:none!important;
             </div>
             <div class="col-md-4 col-xl-2 d-flex align-items-stretch">
               <a
-                href="parameters.php"
+                href="groups.php"
                 class="card bg-danger text-white w-100 card-hover"
               >
                 <div class="card-body">
@@ -147,10 +132,10 @@ text-decoration:none!important;
                   </div>
                   <div class="mt-4">
                     <h4 class="card-title mb-1 text-white">
-                      Parameters
+                      Report Groups
                     </h4>
                     <h6 class="card-text fw-normal text-white-50">
-                      Add and edit parameters
+                      Add and edit Report Groups
                     </h6>
                   </div>
                 </div>
@@ -158,7 +143,7 @@ text-decoration:none!important;
             </div>
             <div class="col-md-4 col-xl-2 d-flex align-items-stretch">
               <a
-                href="users.php"
+                href="show_inputs.php"
                 class="card bg-primary text-white w-100 card-hover"
               >
                 <div class="card-body">
@@ -170,10 +155,10 @@ text-decoration:none!important;
                   </div>
                   <div class="mt-4">
                     <h4 class="card-title mb-1 text-white">
-                      Users
+                      Contexts
                     </h4>
                     <h6 class="card-text fw-normal text-white-50">
-                      Add and Edit Users
+                      Add and Edit Contexts
                     </h6>
                   </div>
                 </div>
@@ -181,7 +166,7 @@ text-decoration:none!important;
             </div>
             <div class="col-md-4 col-xl-2 d-flex align-items-stretch">
               <a
-                href="map_step_1.php"
+                href="users.php"
                 class="card bg-info text-white w-100 card-hover"
               >
                 <div class="card-body">
@@ -192,9 +177,9 @@ text-decoration:none!important;
                     </div>
                   </div>
                   <div class="mt-4">
-                    <h4 class="card-title mb-1 text-white">Map Report</h4>
+                    <h4 class="card-title mb-1 text-white">Users</h4>
                     <h6 class="card-text fw-normal text-white-50">
-                      Select map type and data source
+                      Manage Users
                     </h6>
                   </div>
                 </div>
@@ -231,9 +216,7 @@ text-decoration:none!important;
 
 
 
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
+                
                 <div class="row">
                     <div class="col-12">
 
@@ -254,40 +237,17 @@ text-decoration:none!important;
 
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+                
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+           
             <footer class="footer text-center">
 
             </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+           
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+        
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+    
     <!--<script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <!--<script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
