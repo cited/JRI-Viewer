@@ -38,8 +38,10 @@
 
 			# reports from report groups we own
 			$usr_rep_grps = $acc_obj->getGroupReportGroups(array_keys($usr_grps));
-			$usr_rep_grp_ids = array_keys($usr_rep_grps);
-	    $rows1 = $database->getAll('groups', "id IN (".implode(',', $usr_rep_grp_ids).")", 'id');
+			if(count($usr_rep_grps)){
+				$usr_rep_grp_ids = array_keys($usr_rep_grps);
+	    	$rows1 = $database->getAll('groups', "id IN (".implode(',', $usr_rep_grp_ids).")", 'id');
+			}
 		}
 
     //$rowstiles = $database->getAll('tiles', "tiles.owner = {$user->id}", 'id');
