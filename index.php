@@ -41,8 +41,6 @@
 	    $rows1 = $database->getAll('groups', "id IN (".implode(',', $usr_rep_grp_ids).")", 'id');
 		}
 
-    $rows2 = $database->getAll('wms', "wms.owner = {$user->id}", 'id');
-    $rowspg = $database->getAll('pguser', "pguser.owner = {$user->id}", 'id');
     //$rowstiles = $database->getAll('tiles', "tiles.owner = {$user->id}", 'id');
     //$welcome = ($_SESSION['jasper.owner']);
     //$_SESSION['user'] = $row['name'];
@@ -208,60 +206,8 @@ if($user->accesslevel == 'Admin') {
 
     <!-- David Add -->
 
- <?PHP foreach($rowspg as $row) { ?>
-            <?PHP
-                $image = file_exists("pg/assets/maps/{$row['id']}.png") ? "pg/assets/maps/{$row['id']}.png" : "pg/assets/maps/default.png";
-                $url = $row['pgtileurl'] ? "pg/tilemap.php?id=".$row['id'] : "pg/map.php?id=".$row['id'] ;
-                // if pgtileurl is not set then itsgo with PG otherwise Tile
-            ?>
-
-          <div class="col">
-            <a href="<?=$url?>" style="text-decoration:none; color: #6c757d!important; font-size: 1.25rem; font-weight: 300;">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title" style="font-size: 15px; font-weight: 800;"><?=$row['name']?></h5>
-                  </div>
-                  <div class="px-3">
-                    <div style="height: 150px; width: 100%; background: url('<?=$image?>') no-repeat; background-size: cover; background-position: center center;"></div>
-                  </div>
-                  <?PHP if($row['description']) { ?>
-                      <div class="card-body">
-                        <p class="card-text" style="color: #6c757d!important; font-size: 15px; font-weight: 600;"> <?=$row['description']?> </p>
-                      </div>
-                  <?PHP } ?>
-                </div>
-            </a>
-          </div>
-
-          <?PHP } ?>
 
 
-
-
-  <?PHP foreach($rows2 as $row) { ?>
-             <?PHP
-                $image = file_exists("gs/assets/maps/{$row['id']}.png") ? "gs/assets/maps/{$row['id']}.png" : "gs/assets/maps/default.png";
-            ?>
-
-          <div class="col">
-	<a href="gs/map.php?id=<?=$row['id']?>" style="text-decoration:none; color: #6c757d!important; font-size: 1.25rem; font-weight: 300;">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title" style="font-size: 15px; font-weight: 800;"><?=$row['name']?></h5>
-                  </div>
-                  <div class="px-3">
-                     <div style="height: 150px; width: 100%; background: url('<?=$image?>') no-repeat; background-size: cover; background-position: center center;"></div>
-                  </div>
-                  <?PHP if($row['collection']) { ?>
-                      <div class="card-body">
-                        <p class="card-text" style="color: #6c757d!important; font-size: 15px; font-weight: 600;"> <?=$row['name']?></p>
-                      </div>
-                  <?PHP } ?>
-                </div>
-            </a>
-          </div>
-
-          <?PHP } ?>
 
 
 
