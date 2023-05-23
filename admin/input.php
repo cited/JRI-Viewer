@@ -1,14 +1,4 @@
 <?php
-	#define('DB_HOST', 'geoexhibit.com');
-	#define('DB_NAME', 'exhibit1836_jripub');
-	#define('DB_USER', 'exhibit1836');
-	#define('DB_PASS', 'Tristan1902');
-
-	#$pg_err = '';
-	#$dbconn = pg_connect('host='.DB_HOST.' dbname='.DB_NAME.' user='.DB_USER.' password='.DB_PASS);
-	#if (!$dbconn) {
-	#	$pg_err = pg_last_error($dbconn);
-	#}
 	require_once('class/database.php');
 	require_once('class/report.php');
 	require_once('class/input.php');

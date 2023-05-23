@@ -2,18 +2,15 @@
     session_start();
 		require_once('class/user.php');
 		require_once('class/access_groups.php');
+		require_once('class/database.php');
+
 
     if(!isset($_SESSION['user']) || $_SESSION['user']->accesslevel != 'Admin') {
         header('Location: ../login.php');
     }
 
-    $host = "localhost";
-    $port = "5432";
-    $dbname = "exhibit1836_users";
-    $user = "exhibit1836";
-    $password = "Tristan1902";
-    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-    $dbconn = pg_connect($connection_string);
+    $database = new Database(DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT, DB_SCMA);
+    $dbconn = $database->getConn();
 
 		$acc_ojb = new access_group_Class($dbconn);
     $acc_grp = $acc_ojb->getAccessGroupsArr();
@@ -24,7 +21,7 @@
 			if($ret > 0){
 				header("Location: users.php");
 			}else{
-				echo "Soething Went Wrong";
+				echo "Something Went Wrong";
 			}
     }
 

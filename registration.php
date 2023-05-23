@@ -1,11 +1,9 @@
 <?php
-$host = "localhost";
-$port = "5432";
-$dbname = "exhibit1836_users";
-$user = "exhibit1836";
-$password = "Tristan1902"; 
-$connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-$dbconn = pg_connect($connection_string);
+require_once('admin/class/database.php');
+
+$database = new Database(DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT, DB_SCMA);
+
+$dbconn = $database->getConn();
 if(isset($_POST['submit'])&&!empty($_POST['submit'])){
     
       $sql = "insert into public.enduser(name,email,password)values('".$_POST['name']."','".$_POST['email']."','".md5($_POST['password'])."')";

@@ -42,7 +42,7 @@
         }
 
 
-        function get($table, $where) {
+        function get($table, $where = '') {
             if(is_numeric($where)) {
                 $where = "id = ".intval($where);
             }

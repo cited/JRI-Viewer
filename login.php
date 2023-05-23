@@ -1,27 +1,18 @@
 <?php
-    session_start();
+		require_once('admin/class/database.php');
+		require_once('admin/class/user.php');
+
+		session_start();
     if(isset($_SESSION['user'])) {
         header("Location: index.php");
     }
-    
-    $host = "localhost";
-    $port = "5432";
-    $dbname = "exhibit1836_users";
-    $user = "exhibit1836";
-    $password = "Tristan1902"; 
-    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-    $dbconn = pg_connect($connection_string);
-    
+
+		$database = new Database(DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT, DB_SCMA);
+    $user_obj = new user_Class($database->getConn());
+
     if(isset($_POST['submit'])&&!empty($_POST['submit'])){
-        
-        $hashpassword = md5($_POST['pwd']);
-        $sql ="select * from public.user where email = '".pg_escape_string($dbconn, $_POST['email'])."' and password ='".$hashpassword."'";
-        $data = pg_query($dbconn,$sql); 
-        
-        $row = pg_fetch_object($data);
-        $login_check = pg_num_rows($data);
-        
-        if($login_check > 0 && $row){ 
+				$row = $user_obj->loginCheck($_POST['pwd'], $_POST['email']);
+        if($row){
             $_SESSION['user'] = $row;
             header("Location: index.php");
         }else{
