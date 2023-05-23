@@ -9,13 +9,6 @@
 			array('parameters.php', 		'filter', 									'Parameters'),
 			array('users.php', 					'account-settings-variant', 'Users'),
 			array('access_groups.php',	'account-multiple', 				'User Groups'),
-			#array('registration.php',		'account-plus',							'Add New User'),
-			#array('basemaps.php',				'map', 											'Maps'),
-			#array('tiles.php',					'map', 											'Tiles'),
-			array('map_step_1.php',			'map', 											'Map Report'),
-			#array('featurserv.php',			'map', 											'Feature Serve'),
-			#array('postgis.php',				'map', 											'PostGIS'),
-			#array('vrt.php',						'map', 											'VRT'),
 			array('../index.php',				'exit-to-app',							'Front End'),
 			array('../logout.php',			'logout',										'Lot Out')
 		)
