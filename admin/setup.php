@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
 
-if(file_exists('db_conn.php')){
+if(file_exists('class/database.php')){
 	header('location:index.php');
 	die();
 }
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 	if(!$con){
 		$msg= pg_last_error($con);
 	}else{
-		copy("db.conn.config.php","db_conn.php");
+		copy("class/database.config.php","class/database.php");
 		$file="db_conn.php";
 		file_put_contents($file,str_replace("db_host",$host,file_get_contents($file)));
 		file_put_contents($file,str_replace("db_port",$port,file_get_contents($file)));
@@ -289,6 +289,8 @@ $sql="ALTER TABLE ONLY public.user_access ALTER COLUMN id SET DEFAULT nextval('p
 	pg_query($con,$sql);
 
 
+$sql="INSERT INTO public.user VALUES
+(1, 'John Smith', 'admin@admin.com', '1234', 'Admin');";
 
 
 
