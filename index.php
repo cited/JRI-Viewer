@@ -34,12 +34,12 @@
 			if(count($usr_reps)){
 				$group_rows = $database->getAll('jasper', "id IN (".implode(',', array_keys($usr_reps)).") AND is_grouped = 0", 'id');
 			}
-		}
 
-		# reports from report groups we own
-		$usr_rep_grps = $acc_obj->getGroupReportGroups(array_keys($usr_grps));
-		$usr_rep_grp_ids = array_keys($usr_rep_grps);
-    $rows1 = $database->getAll('groups', "id IN (".implode(',', $usr_rep_grp_ids).")", 'id');
+			# reports from report groups we own
+			$usr_rep_grps = $acc_obj->getGroupReportGroups(array_keys($usr_grps));
+			$usr_rep_grp_ids = array_keys($usr_rep_grps);
+	    $rows1 = $database->getAll('groups', "id IN (".implode(',', $usr_rep_grp_ids).")", 'id');
+		}
 
     $rows2 = $database->getAll('wms', "wms.owner = {$user->id}", 'id');
     $rowspg = $database->getAll('pguser', "pguser.owner = {$user->id}", 'id');
