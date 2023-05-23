@@ -29,7 +29,18 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 						$('[data-toggle="tooltip"]').tooltip();
-						var actions = $("table td:last-child").html();
+						var actions = `
+							<a class="add" title="Add" data-toggle="tooltip">
+								<i class="material-icons">&#xE03B;</i>
+							</a>
+							<a class="edit" title="Edit" data-toggle="tooltip">
+								<i class="material-icons">&#xE254;</i>
+							</a>
+							<a class="delete" title="Delete" data-toggle="tooltip">
+								<i class="material-icons">&#xE872;</i>
+							</a>
+						`;
+						//$("table td:last-child").html();
 						// Append table with add row form on add new button click
 						$(".add-new").click(function() {
 						    //var actions = $("table td:last-child").html();
@@ -80,24 +91,6 @@
 							});
 
 							row += '</tr>';
-
-
-							/*var row = ' < tr > ' +
-							' <td> <input type = "text" class = "form-control" name = "name" id = "name" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "department" id = "department" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' <td> <input type = "text" class = "form-control" name = "phone" id = "phone" > </td>' +
-							' < td > ' + actions + ' </td>' +
-							' < /tr>';*/
 
 							$("table").append(row);
 							$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
@@ -266,7 +259,8 @@
                             <!--<a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/" class="btn btn-primary text-white"
                                 target="_blank">Add New</a>-->
 
-
+							<button type="button" class="btn btn-primary text-white add-new">
+								<i class="fa fa-plus"></i> Add New </button><br>
 
 
                         </div>

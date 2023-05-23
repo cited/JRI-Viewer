@@ -41,7 +41,18 @@
 	        var deleted_ids = [];
 			$(document).ready(function() {
 						$('[data-toggle="tooltip"]').tooltip();
-						var actions = $("table td:last-child").html();
+						var actions = `
+							<a class="add" title="Add" data-toggle="tooltip">
+								<i class="material-icons">&#xE03B;</i>
+							</a>
+							<a class="edit" title="Edit" data-toggle="tooltip">
+								<i class="material-icons">&#xE254;</i>
+							</a>
+							<a class="delete" title="Delete" data-toggle="tooltip">
+								<i class="material-icons">&#xE872;</i>
+							</a>
+						`;
+						//$("table td:last-child").html();
 						// Append table with add row form on add new button click
 						$(".add-new").click(function() {
 						    //var actions = $("table td:last-child").html();
