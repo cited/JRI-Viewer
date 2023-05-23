@@ -67,7 +67,7 @@
 					$email = pg_escape_string($this->dbconn, $email);
 					$hashpassword = md5($pwd);
 	        $sql ="select * from public.user where email = '".$email."' and password ='".$hashpassword."'";
-	        $res = pg_query($this->conn,$sql);
+	        $res = pg_query($this->dbconn,$sql);
 	        return pg_fetch_object($res);
 				}
 
