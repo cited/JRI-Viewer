@@ -26,9 +26,7 @@ if(isset($_POST['submit'])){
 	if(!$con){
 		$msg= pg_last_error($con);
 	}else{
-		copy("class/database.config.php","class/database.php");
-		$file="db_conn.php";
-		$file_data = file_get_contents($file);
+		$file_data = file_get_contents('class/database.config.php');
 
 		$file_data = str_replace("db_host",$host, 				$file_data);
 		$file_data = str_replace("db_port",$port, 				$file_data);
@@ -36,7 +34,7 @@ if(isset($_POST['submit'])){
 		$file_data = str_replace("db_password",$dbpwd,		$file_data);
 		$file_data = str_replace("db_name",$dbname, 			$file_data);
 
-		file_put_contents($file, $file_data);
+		file_put_contents('class/database.php', $file_data);
 
 $sql="CREATE TYPE public.level AS ENUM (
     'User',
