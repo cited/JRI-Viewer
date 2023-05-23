@@ -35,92 +35,268 @@ if(isset($_POST['submit'])){
 		file_put_contents($file,str_replace("db_name",$dbname,file_get_contents($file)));
 		file_put_contents($file,str_replace("db_name",$dbname,file_get_contents($file)));
 
-		$sql="CREATE TABLE users (
-            id SERIAL PRIMARY KEY,
-            role VARCHAR(10) NOT NULL,
-            username VARCHAR(255) NOT NULL,
-            password VARCHAR(255) NOT NULL,
-            name VARCHAR(255) NOT NULL
-        );";
-		pg_query($con,$sql);
+	
 
-		$sql="CREATE TABLE hosts (
-			id SERIAL PRIMARY KEY,
-			host VARCHAR(255) NOT NULL,
-			username VARCHAR(255) NOT NULL,
-			password VARCHAR(255) NOT NULL,
-			ssh_port INTEGER NOT NULL
-		);";
-		pg_query($con,$sql);
 
-		$sql="INSERT INTO users (role, username, password, name) VALUES
-			('admin', 'admin1', '81dc9bdb52d04dc20036dbd8313ed055', 'J. Admin'),
-			('user', 'user1', '81dc9bdb52d04dc20036dbd8313ed055', 'J. User'),
-			('devel', 'developer1', '81dc9bdb52d04dc20036dbd8313ed055', 'J. Developer');";
-		pg_query($con,$sql);
+$sql="CREATE TYPE public.level AS ENUM (
+    'User',
+    'Admin'
+;";
+	pg_query($con,$sql);
 
-		# list of access groups
-		$sql = "CREATE TABLE access_groups (
-		  id 				SERIAL PRIMARY KEY,
-			name 			VARCHAR(255) NOT NULL
-		);";
-		pg_query($con,$sql);
 
-		# maps groups to reports
-		$sql = "CREATE TABLE report_access (
-		  id 			SERIAL PRIMARY KEY,
-			access_group_id	integer NOT NULL,
-			report_id		integer NOT NULL,
-			CONSTRAINT UC_access UNIQUE (access_group_id,report_id),
-			FOREIGN KEY (access_group_id) REFERENCES public.access_groups(id),
-			FOREIGN KEY (report_id) 			REFERENCES public.jasper(id)
-		);";
-		pg_query($con,$sql);
 
-		# maps groups to reports
-		$sql = "CREATE TABLE group_access (
-		  id 			SERIAL PRIMARY KEY,
-			access_group_id	integer NOT NULL,
-			report_group_id	integer NOT NULL,
-			CONSTRAINT UC_gaccess UNIQUE (access_group_id,report_group_id),
-			FOREIGN KEY (access_group_id) REFERENCES public.access_groups(id),
-			FOREIGN KEY (report_group_id)	REFERENCES public.groups(id)
-		);";
-		pg_query($con,$sql);
+$sql="CREATE TYPE public.userlevel AS ENUM (
+    'Admin',
+    'User'
+);";
+	pg_query($con,$sql);
 
-		# maps access groups to featursrv
-		$sql = "CREATE TABLE wms_access (
-			id 			SERIAL PRIMARY KEY,
-			access_group_id	integer NOT NULL,
-			wms_id					integer NOT NULL,
-			CONSTRAINT UC_waccess UNIQUE (access_group_id,wms_id),
-			FOREIGN KEY (access_group_id) REFERENCES public.access_groups(id),
-			FOREIGN KEY (wms_id)	REFERENCES public.wms(id)
-		);";
-		pg_query($con,$sql);
 
-		# maps access groups to postgis
-		$sql = "CREATE TABLE pguser_access (
-			id 			SERIAL PRIMARY KEY,
-			access_group_id	integer NOT NULL,
-			pguser_id				integer NOT NULL,
-			CONSTRAINT UC_pgaccess UNIQUE (access_group_id,pguser_id),
-			FOREIGN KEY (access_group_id) REFERENCES public.access_groups(id),
-			FOREIGN KEY (pguser_id)	REFERENCES public.pguser(id)
-		);";
-		pg_query($con,$sql);
 
-		# maps users to access groups
-		$sql = "CREATE TABLE user_access (
-		  id 			SERIAL PRIMARY KEY,
-			user_id					integer NOT NULL,
-			access_group_id	integer NOT NULL,
-			CONSTRAINT UC_groups UNIQUE (user_id,access_group_id),
-			FOREIGN KEY (user_id) REFERENCES public.user(id),
-			FOREIGN KEY (access_group_id) REFERENCES public.access_groups(id)
-		)";
-		pg_query($con,$sql);
 
+$sql="CREATE TABLE public.access_groups (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL
+);";
+	pg_query($con,$sql);
+
+
+
+$sql="CREATE SEQUENCE public.access_groups_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;";
+ pg_query($con,$sql);
+
+
+$sql="ALTER SEQUENCE public.access_groups_id_seq OWNED BY public.access_groups.id;";
+	pg_query($con,$sql);
+
+
+
+$sql="CREATE SEQUENCE public.user_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;";
+
+	pg_query($con,$sql);
+
+
+
+$sql="CREATE TABLE public.basemaps (
+    id integer DEFAULT nextval('public.user_seq'::regclass) NOT NULL,
+    basemap_name character varying(255),
+    basemap_url character varying(255)
+);";
+	pg_query($con,$sql);
+
+
+$sql="CREATE TABLE public.group_access (
+    id integer NOT NULL,
+    access_group_id integer NOT NULL,
+    report_group_id integer NOT NULL
+);";
+	pg_query($con,$sql);
+
+
+
+$sql="CREATE SEQUENCE public.group_access_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;";
+	pg_query($con,$sql);
+
+
+
+$sql="ALTER SEQUENCE public.group_access_id_seq OWNED BY public.group_access.id;";
+	pg_query($con,$sql);
+
+
+$sql="CREATE TABLE public.groups (
+    id integer NOT NULL,
+    name character varying(255),
+    reportids character varying(255),
+    owner numeric,
+    description character varying(255)
+);";
+	pg_query($con,$sql);
+
+
+$sql="CREATE SEQUENCE public.groups_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;";
+	pg_query($con,$sql);
+
+
+$sql="ALTER SEQUENCE public.groups_id_seq OWNED BY public.groups.id;";
+	pg_query($con,$sql);
+
+
+$sql="CREATE TABLE public.inputs (
+    id integer DEFAULT nextval('public.user_seq'::regclass) NOT NULL,
+    input character varying(2550),
+    name character varying(255),
+    report_id numeric
+);";
+	pg_query($con,$sql);
+
+
+
+$sql="CREATE TABLE public.jasper (
+    id integer NOT NULL,
+    url character varying(255),
+    repname character varying(200),
+    datasource character varying(200),
+    download_only character varying(200),
+    outname character varying(200),
+    name character varying(200),
+    owner numeric(10,0),
+    is_grouped numeric(10,0) DEFAULT 0,
+    description character varying(255)
+);";
+	pg_query($con,$sql);
+
+
+
+$sql="CREATE SEQUENCE public.jesper_ id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;";
+	pg_query($con,$sql);
+
+
+$sql="ALTER SEQUENCE public.jesper_ id_seq OWNED BY public.jasper.id;";
+	pg_query($con,$sql);
+
+
+$sql="CREATE TABLE public.parameters (
+    id integer DEFAULT nextval('public.user_seq'::regclass) NOT NULL,
+    reportid numeric,
+    ptype character varying(250),
+    pvalues character varying(250),
+    pname character varying(250)
+);";
+	pg_query($con,$sql);
+
+
+
+$sql="CREATE TABLE public.report_access (
+    id integer NOT NULL,
+    access_group_id integer NOT NULL,
+    report_id integer NOT NULL
+);";
+	pg_query($con,$sql);
+
+
+$sql="CREATE SEQUENCE public.report_access_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;";
+	pg_query($con,$sql);
+
+
+$sql="ALTER SEQUENCE public.report_access_id_seq OWNED BY public.report_access.id;";
+	pg_query($con,$sql);
+
+
+
+$sql="CREATE TABLE public.user (
+    id integer NOT NULL,
+    name character varying(250),
+    email character varying(250),
+    password character varying(250),
+    accesslevel character varying
+);";
+	pg_query($con,$sql);
+
+
+$sql="CREATE TABLE public.user_access (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    access_group_id integer NOT NULL
+);";
+	pg_query($con,$sql);
+
+
+$sql="CREATE SEQUENCE public.user_access_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;";
+
+	pg_query($con,$sql);
+
+
+$sql="ALTER SEQUENCE public.user_access_id_seq OWNED BY public.user_access.id;";
+	pg_query($con,$sql);
+
+
+$sql="CREATE SEQUENCE public.user_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;";
+	pg_query($con,$sql);
+
+
+$sql="ALTER SEQUENCE public.user_id_seq OWNED BY public.user.id;";
+	pg_query($con,$sql);
+
+
+$sql="ALTER TABLE ONLY public.access_groups ALTER COLUMN id SET DEFAULT nextval('public.access_groups_id_seq'::regclass);";
+	pg_query($con,$sql);
+
+$sql="ALTER TABLE ONLY public.group_access ALTER COLUMN id SET DEFAULT nextval('public.group_access_id_seq'::regclass);";
+	pg_query($con,$sql);
+
+$sql="ALTER TABLE ONLY public.groups ALTER COLUMN id SET DEFAULT nextval('public.groups_id_seq'::regclass);";
+	pg_query($con,$sql);
+
+$sql="ALTER TABLE ONLY public.jasper ALTER COLUMN id SET DEFAULT nextval('public.jesper_ id_seq'::regclass);";
+	pg_query($con,$sql);
+
+
+$sql="ALTER TABLE ONLY public.report_access ALTER COLUMN id SET DEFAULT nextval('public.report_access_id_seq'::regclass);";
+	pg_query($con,$sql);
+
+$sql="ALTER TABLE ONLY public.user ALTER COLUMN id SET DEFAULT nextval('public.user_id_seq'::regclass);";
+	pg_query($con,$sql);
+
+$sql="ALTER TABLE ONLY public.user_access ALTER COLUMN id SET DEFAULT nextval('public.user_access_id_seq'::regclass);";
+	pg_query($con,$sql);
+
+
+
+
+
+
+
+
+
+		
 		header('location:index.php');
 	}
 }
