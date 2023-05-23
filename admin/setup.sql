@@ -163,5 +163,6 @@ ALTER TABLE ONLY public.report_access ALTER COLUMN id SET DEFAULT nextval('publi
 ALTER TABLE ONLY public.user ALTER COLUMN id SET DEFAULT nextval('public.user_id_seq'::regclass);
 ALTER TABLE ONLY public.user_access ALTER COLUMN id SET DEFAULT nextval('public.user_access_id_seq'::regclass);
 
+-- password is 1234
 INSERT INTO public.user VALUES
-	(1, 'John Smith', 'admin@admin.com', '1234', 'Admin');
+	(1, 'John Smith', 'admin@admin.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin');
