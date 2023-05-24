@@ -268,24 +268,14 @@
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+    
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
+       
         <header class="topbar" data-navbarbg="skin6">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header" data-logobg="skin6">
-                    <!-- ============================================================== -->
-                    <!-- Logo -->
-                    <!-- ============================================================== -->
+                    
                     <a class="navbar-brand" href="index.php">
                         <!-- Logo icon -->
                         <b class="logo-icon">
@@ -302,26 +292,18 @@
 
                         </span>
                     </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
+                   
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                             class="ti-menu ti-close"></i></a>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
+                
 
             </nav>
         </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
+        
         <?php define('MENU_SEL', 'reports.php'); include("incl/sidebar.php"); ?>
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+        
         <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
@@ -347,12 +329,7 @@
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+           
             <div class="container-fluid">
 
 				<table class="table table-bordered">
@@ -407,10 +384,6 @@
 
 
 
-
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
                 <div class="row">
 
 
@@ -438,582 +411,23 @@
 
 
 <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-body">
-                  <h4>Introduction</h4>
-                  <hr />
-                  <p>
-                    Flexy Admin Bootstrap Dashboard admin is a popular open
-                    source WebApp template for admin dashboards and control
-                    panels. Flexy is fully responsive HTML template, which is
-                    based on the CSS framework
-                    <span class="text-danger">Bootstrap 5</span>. It utilizes
-                    all of the Bootstrap components in its design and re-styles
-                    many commonly used plugins to create a consistent design
-                    that can be used as a user interface for backend
-                    applications. Flexy is based on a modular design, which
-                    allows it to be easily customized and built upon. This
-                    documentation will guide you through installing the template
-                    and exploring the various components that are bundled with
-                    the template.
-                  </p>
-                  <p>
-                    We put a lot of love and effort to make Flexy Admin
-                    Bootstrap Dashboard admin a useful template for everyone and
-                    now It comes with 9 unique demos. We are keen to release
-                    continuous long term updates and lots of new features will
-                    be coming soon in the future releases. Once you purchased
-                    Flexy Admin Bootstrap Dashboard admin, you will be entitled
-                    to free download of all future updates for the same license.
-                  </p>
-                  <div class="p-4 border shadow-sm rounded">
-                    <h4>Support</h4>
-                    <hr />
-                    <div class="row">
-                      <div class="col-md-6 border-right">
-                        <ul class="list-style-none">
-                          <li class="my-2 border-bottom pb-3">
-                            <span class="font-weight-medium text-dark"
-                              ><i class="icon-note me-2 text-success"></i>
-                              Includes:</span
-                            >
-                          </li>
-                          <li class="my-3">
-                            <span
-                              ><i
-                                class="ri-edit-line fs-6 me-2 text-success"
-                              ></i>
-                              Answering your questions or problems regarding the
-                              template.</span
-                            >
-                          </li>
-                          <li class="my-3">
-                            <span
-                              ><i
-                                class="ri-edit-line fs-6 me-2 text-success"
-                              ></i>
-                              Giving solution to the Bugs reported.</span
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6">
-                        <ul class="list-style-none">
-                          <li class="my-2 border-bottom pb-3">
-                            <span class="font-weight-medium text-dark"
-                              ><i class="icon-note me-2 text-danger"></i> Does
-                              Not Includes:</span
-                            >
-                          </li>
-                          <li class="my-3">
-                            <span
-                              ><i
-                                class="ri-edit-line fs-6 me-2 text-danger"
-                              ></i>
-                              Custmaization Work</span
-                            >
-                          </li>
-                          <li class="my-3">
-                            <span
-                              ><i
-                                class="ri-edit-line fs-6 me-2 text-danger"
-                              ></i>
-                              Any Installation Work</span
-                            >
-                          </li>
-                          <li class="my-3">
-                            <span
-                              ><i
-                                class="ri-edit-line fs-6 me-2 text-danger"
-                              ></i>
-                              Support for any Third Party Plugins /
-                              Software</span
-                            >
-                          </li>
-                          <li class="my-3">
-                            <span
-                              ><i
-                                class="ri-edit-line fs-6 me-2 text-danger"
-                              ></i>
-                              Support or Guide for How to integrate with any
-                              technologies (like, PHP, .net, Java etc)</span
-                            >
-                          </li>
-                          <li class="my-3">
-                            <span
-                              ><i
-                                class="ri-edit-line fs-6 me-2 text-danger"
-                              ></i>
-                              Solve bug in your implemented template</span
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <h4 class="card-title mt-5">Structure</h4>
-                  <hr />
-                  <p>
-                    After purchasing our template extract the zip file and you
-                    will see this structure.
-                  </p>
-                  <div class="bg-light p-3 rounded">
-                    <ul class="list-style-none">
-                      <li>
-                        <h4 class="fw-bold">
-                          Flexy Admin Bootstrap Dashboard admin
-                        </h4>
-                        <ul class="pl-3 pl-md-5">
-                          <li class="py-2">
-                            <h6 class="fw-bold">
-                              <i
-                                class="
-                                  fas
-                                  fa-folder
-                                  me-2
-                                  text-warning
-                                  font-bold
-                                "
-                              ></i
-                              >docs
-                            </h6>
-                          </li>
-                          <li class="py-2">
-                            <h6 class="fw-bold">
-                              <i
-                                class="
-                                  fas
-                                  fa-folder
-                                  me-2
-                                  text-warning
-                                  font-bold
-                                "
-                              ></i
-                              >landingpage
-                            </h6>
-                          </li>
-                          <li class="py-2">
-                            <h6 class="fw-bold">
-                              <i
-                                class="
-                                  fas
-                                  fa-folder
-                                  me-2
-                                  text-warning
-                                  font-bold
-                                "
-                              ></i
-                              >package
-                            </h6>
-                            <ul>
-                              <li class="py-2">
-                                <span class="font-weight-bold"
-                                  ><i
-                                    class="
-                                      fas
-                                      fa-folder
-                                      me-2
-                                      text-warning
-                                      font-bold
-                                    "
-                                  ></i
-                                  >dist</span
-                                >
-                                <ul>
-                                  <li class="py-2">
-                                    <span class="font-weight-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >css</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span
-                                          >all the compiled css is here</span
-                                        >
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="font-weight-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >js</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>all the js is here</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li class="py-2">
-                                <span class="font-weight-bold"
-                                  ><i
-                                    class="
-                                      fas
-                                      fa-folder
-                                      me-2
-                                      text-warning
-                                      font-bold
-                                    "
-                                  ></i
-                                  >assets</span
-                                >
-                                <ul>
-                                  <li class="py-2">
-                                    <span class="font-weight-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >extra-libs</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span
-                                          >libs which are not available in
-                                          npm</span
-                                        >
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="font-weight-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >images</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>used images</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="font-weight-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >libs</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span
-                                          >libs which are available in
-                                          npm</span
-                                        >
-                                      </li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li class="py-2">
-                                <span class="font-weight-bold">
-                                  <i
-                                    class="
-                                      fas
-                                      fa-folder
-                                      me-2
-                                      text-warning
-                                      font-bold
-                                    "
-                                  ></i
-                                  >scss</span
-                                >
-                              </li>
-                              <li class="py-2">
-                                <span>
-                                  <i
-                                    class="
-                                      fas
-                                      fa-folder
-                                      me-2
-                                      text-warning
-                                      font-bold
-                                    "
-                                  ></i
-                                  >html</span
-                                >
-                                <ul>
-                                  <li class="py-2">
-                                    <span class="fw-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >dark</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>.html files</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="fw-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >horizontal</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>.html files</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="fw-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >horizontal-rtl</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>.html files</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="fw-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >main</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>.html files</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="fw-bold">
-                                      <i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >rtl</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>.html files</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="fw-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >minisidebar</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>.html files</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="fw-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >overlay</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>.html files</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li class="py-2">
-                                    <span class="fw-bold"
-                                      ><i
-                                        class="
-                                          fas
-                                          fa-folder
-                                          me-2
-                                          text-warning
-                                          font-bold
-                                        "
-                                      ></i
-                                      >stylish</span
-                                    >
-                                    <ul>
-                                      <li class="py-2">
-                                        <span>.html files</span>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li class="py-2">
-                                <span class="fw-bold"
-                                  ><i
-                                    class="
-                                      fas
-                                      fa-dot-circle
-                                      me-2
-                                      text-warning
-                                      font-bold
-                                      fs-2
-                                    "
-                                  ></i
-                                  >gulpfile.js</span
-                                >
-                              </li>
-                              <li class="py-2">
-                                <span class="fw-bold"
-                                  ><i
-                                    class="
-                                      fas
-                                      fa-dot-circle
-                                      me-2
-                                      text-warning
-                                      font-bold
-                                      fs-2
-                                    "
-                                  ></i
-                                  >package.json</span
-                                >
-                              </li>
-                              <li class="py-2">
-                                <span class="fw-bold"
-                                  ><i
-                                    class="
-                                      fas
-                                      fa-dot-circle
-                                      me-2
-                                      text-warning
-                                      font-bold
-                                      fs-2
-                                    "
-                                  ></i
-                                  >package-lock.json</span
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
+            
 
 
 
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+                
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+            
             <footer class="footer text-center">
 
             </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+            
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+       
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+   
     <!--<script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <!--<script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -1027,3 +441,4 @@
 </body>
 
 </html>
+
