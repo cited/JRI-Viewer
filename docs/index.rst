@@ -1,7 +1,7 @@
 JRI Viewer
 ==================================================
 
-.. image:: _static/JRI-Publisher-Main.png
+.. image:: _static/JRIViewer-Main.png
 
 
 .. include:: ../README.rst
