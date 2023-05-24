@@ -2,12 +2,20 @@
 Installation
 ************
 
-Installation can be done using the pre-installer.sh script or via GIT.
+Installation is done via /admin/setup.php
 
-Using the Pre-Installer
+Using Installer
 =======================
 
-On a fresh CentOS 8 or Ubuntu 18 or 20 installation, the fastest method is to use the pre-installer script:
+Clone or download the repoistory
+
+.. code-block:: console
+   :linenos:
+
+    git clone https://github.com/cited/jri-viewer
+    mv jri-publisher-master jri_viewer
+
+Navigate to /admin/setup.php 
 
 .. code-block:: console
    :linenos:
