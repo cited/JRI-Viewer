@@ -3,7 +3,6 @@
 		require_once('admin/class/database.php');
     		require_once('admin/class/report.php');
 		require_once('admin/class/user.php');
-                require_once('admin/class/links.php');
 		require_once('admin/class/access_groups.php');
 
 		$database = new Database(DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT, DB_SCMA);
