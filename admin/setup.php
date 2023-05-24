@@ -94,7 +94,7 @@ if(isset($_POST['submit'])){
 		}else{
 		?>
 
-	  <div align="center"><p>&nbsp;</p><img src="img/jri-admin-logo.png"></div>
+	  <div align="center"><p>&nbsp;</p>JRI Viewer Installer</div>
 
          <table class="table">
 		  <thead>
@@ -120,20 +120,7 @@ if(isset($_POST['submit'])){
 			  </td>
 			</tr>
 
-			<tr>
-			  <th scope="row">SSH2 Installed</th>
-			  <td>
-				<?php
-				$ssh2_connect=function_exists('ssh2_connect');
-				if($ssh2_connect){
-					echo "<span class='success'>Yes</span>";
-				}else{
-					echo "<span class='error'>Not Detected</span>";
-					$is_error='yes';
-				}
-				?>
-			  </td>
-			</tr>
+			
 			<tr>
 			  <th scope="row">Session Working</th>
 			  <td>
