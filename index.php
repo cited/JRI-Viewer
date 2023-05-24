@@ -1,8 +1,9 @@
 <?php
     session_start();
 		require_once('admin/class/database.php');
-    require_once('admin/class/report.php');
+    		require_once('admin/class/report.php');
 		require_once('admin/class/user.php');
+                require_once('admin/class/links.php');
 		require_once('admin/class/access_groups.php');
 
 		$database = new Database(DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT, DB_SCMA);
@@ -44,9 +45,7 @@
 			}
 		}
 
-    //$rowstiles = $database->getAll('tiles', "tiles.owner = {$user->id}", 'id');
-    //$welcome = ($_SESSION['jasper.owner']);
-    //$_SESSION['user'] = $row['name'];
+    $rowslink =  $database->getAll('links', "owner IN (".implode(',', $usr_rep_grp_ids).")", 'link_id');
 ?>
 
 
@@ -56,7 +55,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
     <title>JRI Map Viewer</title>
 
@@ -207,29 +205,32 @@ if($user->accesslevel == 'Admin') {
 
 
 
-    <!-- David Add -->
+<?PHP foreach($rowslink as $row) { ?>
+            <?PHP
+                $image = file_exists("assets/links/{$row['link_id']}.png") ? "assets/links/{$row['link_id']}.png" : "assets/links/default.png";
+            ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <div class="col">
+            <a href="<?=$row['linkurl']?>" target="_blank" style="text-decoration:none; color: #6c757d!important; font-size: 1.15rem; font-weight: 300;">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-size: 15px; font-weight: 800;"><?=$row['linkname']?></h5>
+                  </div>
+                  <div class="px-3">
+                    <div style="height: 150px; width: 100%; background: url('<?=$image?>') no-repeat; background-size: cover; background-position: center center;"></div>
+                  </div>
+                  <?PHP if($row['linkdesc']) { ?>
+                      <div class="card-body">
+                        <p class="card-text" style="color: #6c757d!important; font-size: 15px; font-weight: 600;"> <?=$row['linkdesc']?> </p>
+                      </div>
+                  <?PHP } ?>
+                </div>
+            </a>
+          </div>
+          <?PHP } ?>
 
 
 </div>
-
-
-
 
     </div>
   </div>
