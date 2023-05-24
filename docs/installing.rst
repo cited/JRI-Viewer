@@ -2,9 +2,13 @@
 Installation
 ************
 
-Installation is done via /admin/setup.php
+Installation is done via setup.php located in the /admin directory
 
-Using Installer
+PHP and PostgreSQL are required.
+
+Create a PostgreSQL database and run the installer.
+
+Running the Installer
 =======================
 
 Clone or download the repoistory
@@ -15,64 +19,25 @@ Clone or download the repoistory
     git clone https://github.com/cited/jri-viewer
     mv jri-publisher-master jri_viewer
 
-Navigate to /admin/setup.php 
-
-.. code-block:: console
-   :linenos:
-   
-    wget https://raw.githubusercontent.com/DavidGhedini/jri-publisher/master/scripts/pre-install.sh
-    
-    chmod +x pre-install.sh
-
-    ./pre-install.sh
-    
-The above will install Webmin, Apache HTTPD Server, JRI Publisher module, as well as our (optional) Certbot Module for SSL.
-
-When the script completes, you will see the message below:
-
-.. code-block:: console
-   :linenos:
-
-    /opt ~
-    Installed CertBot in /usr/share/webmin/certbot (336 kb)
-    ~
-    JRI Publisher is now installed. Go to Servers > JRI Publisher to complete installation
+Navigate to /admin/setup.php
 
 
-.. note::
-    Following above, you will need to log in to Webmin to complete installation using the install :ref:`wizard-label`.
+.. image:: _static/Installer.png
 
+Enter the information for the PostgreSQL database you created:
 
+.. image:: _static/Installer2.png
 
-Via Git or Download
+The installer will create the required objects in PostgreSQL
+
+When the installer completes, you can log in using the default admin@admin.com/1234
+
+.. image:: _static/Installer3.png
+
+PhantomJS
 ===================
 
-You can use Git to build module for an existing Webmin installation:
+Printing of GroupedReports requires phantomjs to be installed on your server.
 
-.. code-block:: console
-   :linenos:
 
-    git clone https://github.com/DavidGhedini/jri-publisher
-    mv jri-publisher-master jri_publisher
-    tar -cvzf jri_publisher.wbm.gz jri_publisher/
-
-    
-.. note::
-    Following above, you will need to log in to Webmin to complete installation using the install :ref:`wizard-label`.
-    
-    
-Postfix
-===================
-
-In order to use the email functionality for Report Scheduling, a working MTA is required.
-
-If one is not already installed, the simplest to install is Postfix.
-
-Postfix can be installed on Webmin.
-
-Navigate to Servers > Unused Modules > Postfix Mail Server
-
-Accept the defaults and click "Install Now" as shown below.
-
-.. image:: _static/Postfix-install.png
 
