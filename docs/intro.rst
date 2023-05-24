@@ -12,7 +12,6 @@ It does not require JRI Publisher and can be used with any (and multiple) instan
 
 It supports Users, Groups, and report-level permissions.
 
-In additional to Jasper reports, there is also a PostGIS and pg_featursev report option.
 
 .. image:: _static/JRIViewer-Main.png
 
