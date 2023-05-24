@@ -44,7 +44,6 @@
 			}
 		}
 
-    $rowslink =  $database->getAll('links', "owner IN (".implode(',', $usr_rep_grp_ids).")", 'link_id');
 ?>
 
 
@@ -204,29 +203,7 @@ if($user->accesslevel == 'Admin') {
 
 
 
-<?PHP foreach($rowslink as $row) { ?>
-            <?PHP
-                $image = file_exists("assets/links/{$row['link_id']}.png") ? "assets/links/{$row['link_id']}.png" : "assets/links/default.png";
-            ?>
 
-          <div class="col">
-            <a href="<?=$row['linkurl']?>" target="_blank" style="text-decoration:none; color: #6c757d!important; font-size: 1.15rem; font-weight: 300;">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title" style="font-size: 15px; font-weight: 800;"><?=$row['linkname']?></h5>
-                  </div>
-                  <div class="px-3">
-                    <div style="height: 150px; width: 100%; background: url('<?=$image?>') no-repeat; background-size: cover; background-position: center center;"></div>
-                  </div>
-                  <?PHP if($row['linkdesc']) { ?>
-                      <div class="card-body">
-                        <p class="card-text" style="color: #6c757d!important; font-size: 15px; font-weight: 600;"> <?=$row['linkdesc']?> </p>
-                      </div>
-                  <?PHP } ?>
-                </div>
-            </a>
-          </div>
-          <?PHP } ?>
 
 
 </div>
