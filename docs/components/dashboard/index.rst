@@ -7,71 +7,25 @@
    :width: 1em
 
 **********************
-Data Sources
+Dashboard
 **********************
 
 .. contents:: Table of Contents
-Data Source Types
+Dashboard Layout
 =================
 
-Data Sources are used to connect your Oracle database.
+Once logged in as an administrator, the dashboard is show below.
 
-JRI Publisher supports both JDBC and JNDI Data Source types included with JRI.
+.. image:: _static/JRIVieweDashboard.png
 
-JDBC Data Sources are stored in a flat file at::
+Items can be accessed via the dashboard as well as left side menu
 
-    ${CATALINA_HOME}/jasper_reports/conf/
-   
-JDBC Data Sources have the following form::
+* Reports - add and edit Reports
+* Parameters - add and edit Report Parameters
+* Report Groups - add and edit Report Groups
+* Context - add and edit Report Contexts
+* Front End - view the front end as an end user
 
-   #====================================================================
-   # JDBC datasource configuration
-   # http://www.orafaq.com/wiki/JDBC#Thin_driver
-   # additional jdbc configurations, please uncomment
-   #====================================================================
-   [datasource:test]
-   name=test
-   url=jdbc:oracle:thin:@127.0.0.1:1521:XE
-   username=my_oracle_user
-   password=my_oracle_user_pwd
-
-JNDI Data Sources are stored in a database and referenced in the application server rather than stored in a flat file as with JDBC Data Sources.
-
-JNDI Data Sources have the following form::
-
-   #====================================================================
-   # Native JNDI datasource, to be configured in the application server
-   # name: jndi_test
-   #====================================================================
-   [datasource:jndi_test]
-   type=jndi
-   name=jndi_test
-
-
-Working with Data Sources
-=========================
-
-Data Sources can be added, edited and removed from the JRI Publisher Module via the Data Source tab, as shown below
-
-.. image:: _static/data-source-tab.png
-
-The default view on clicking the tab is the List view, as shown below.
-
-.. image:: _static/data-source-default.png
-
-To add a Data Source, click on the Add tab at top.
-
-Select the desired Data Source type and enter the required information as shown below. Then click the Add button:
-
-.. image:: _static/add-data-source.png
-
-On the main Data Source tab we can confirm the Data Source has been added:
-
-.. image:: _static/data-source-added-ok.png
-
-To remove a Data Source, click on the Remove tab and select the Data Source you wish to remove using the drop-down selector as shown below:
-
-.. image:: _static/data-source-remove.png
 
 
 
