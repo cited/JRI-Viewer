@@ -12,22 +12,26 @@ JRI Viewer
 
    intro
    installing
-   wizard
-   webmin
+   
    
 .. toctree::
     :maxdepth: 3
-    :caption: Components
+    :caption: Administration
 
-    components/general/index
-    components/tomcat/index
-    components/datasources/index
-    components/publish/index
-    components/schedule/index
-    components/templates/index
+    components/dashboard/index
+    components/users/index
+    components/usergroups/index
     components/reports/index
-    components/security/index
-    components/jasper/index
+    components/reportgroups/index
+    components/parameters/index
+    components/context/index
+    
+.. toctree::
+    :maxdepth: 3
+    :caption: End User
+
+    endusers/dashboard/index
+ 
 
 .. toctree::
     :maxdepth: 2
