@@ -195,10 +195,9 @@
                             <!-- Light Logo icon -->
                             <img src="assets/images/cited-logo.png" alt="homepage" class="light-logo" />
                         </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
+                       
                         <span class="logo-text">
-                            <!-- dark Logo text -->
+                      
 
                         </span>
                     </a>
@@ -228,7 +227,7 @@
                             <!--<a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/" class="btn btn-primary text-white"
                                 target="_blank">Add New</a>-->
 
-<a href="input.php" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Add Context</a>
+<a href="input.php" class="btn btn-info btn-md active" role="button" aria-pressed="true">Add Context</a>
 
 
                         </div>
