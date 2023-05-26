@@ -162,7 +162,7 @@
  																				 </select>
  																		 `);
  														 }
- 														 var val = $(this).attr('data-value');
+ 														 var val = $(this).attr('data-value').split(',');
  														 $(this).find('[name='+name+']').val(val);
  												 }
  												 else {
