@@ -7,7 +7,7 @@
    :width: 1em
 
 **********************
-Report Dashboard
+Reports
 **********************
 
 .. contents:: Table of Contents
