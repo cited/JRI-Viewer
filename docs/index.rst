@@ -30,7 +30,7 @@ JRI Viewer
     :maxdepth: 3
     :caption: End User
 
-    endusers/dashboard/index
+    endusers/index
  
 
 .. toctree::
