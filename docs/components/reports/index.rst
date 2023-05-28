@@ -69,3 +69,15 @@ Grouped Report
 ===================
 Report is part of Grouped Report   
 
+Edit Report
+===================
+To edit a report entry, click the Edit icon, as shown below:
+
+.. image:: _static/Edit-Report.png
+
+Delete Report
+===================
+To delete a report entry, click the Delete icon, as shown below:
+
+.. image:: _static/Edit-Report.png
+
