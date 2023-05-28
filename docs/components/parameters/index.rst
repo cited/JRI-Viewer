@@ -45,7 +45,7 @@ Query Parameter
 
 To add a Query parameter, click the "Add New" button at top.
 
-.. image:: Parameter-1.png
+.. image:: Parameter-2.png
 
 Enter the following information:
 
