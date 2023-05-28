@@ -30,7 +30,7 @@ Add Members to Group
 
 To add members to a Group, click the Edit button and add members as below
 
-.. image:: _static/Add-Report.png.png
+.. image:: Groups-1.png
 
 Edit Group
 ===================
