@@ -45,7 +45,7 @@ Query Parameter
 
 To add a Query parameter, click the "Add New" button at top.
 
-.. image:: Parameter-2.png
+.. image:: Parameter-1.png
 
 Enter the following information:
 
@@ -56,7 +56,7 @@ Enter the following information:
 
 In the example below, the Values we entered are the Jasper parameters Cost_Greater_Than and Cost_Less_Than.
 
-.. image:: Parameter-1.png
+.. image:: Parameter-2.png
 
 Edit Parameter
 ===================
