@@ -54,7 +54,9 @@ Enter the following information:
 * Paramater Values - Comma separated list of Parameters to be used
 * Report Name - Select the report Parameter will be applied to.
 
-In the example below, the Values are North America, South America, and Europe.
+In the example below, the Values we entered are the Jasper parameters Cost_Greater_Than and Cost_Less_Than.
+
+.. image:: Parameter-1.png
 
 Edit Parameter
 ===================
