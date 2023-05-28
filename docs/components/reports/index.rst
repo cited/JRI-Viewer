@@ -27,47 +27,21 @@ To add a new report, click the "Add New" button at top.
 
 Enter the following information:
 
-* url	
-* Report	
-* Data Souce	
-* Download Only 
-* File Name	
-* Name	
-* Description	
-* Access Groups	
-* Grouped Report
+* url	- Full url to your JRI installation
+* Report	- Name of the jrxml file
+* Data Souce - The JRI Data Source name
+* Download Only - Download Only option
+* File Name	- jrxml name of the report
+* Name	- the name that will appear in the dashboard
+* Description	- the description that will appear in the dashboard
+* Access Groups - Group(s) that have access to this report
+* Grouped Report - Report is part of Grouped Report   
 
 
-Url
-===================
-Full url to your JRI installation
-
-Report
-===================
-This is the name of the jrxml file
-
-Data Source
-===================
-The JRI Data Source name
-
-Download Only
-===================
-The Download Only option is used primarily for two reasons.
-
+Download Only Option
+=====================
 1.  The report contains charts which do not render in HTML
 2.  You want the chart to be downloaded immediately.
-
-Name
-===================
-This is the name you wish to appear in the dashboard
-
-Descruption 
-===================
-This is the description that will appear in the dashboard
-
-Grouped Report
-===================
-Report is part of Grouped Report   
 
 Edit Report
 ===================
