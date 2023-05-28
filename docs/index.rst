@@ -25,6 +25,7 @@ JRI Viewer
     components/reportgroups/index
     components/parameters/index
     components/context/index
+    components/thumbnail/index
     
 .. toctree::
     :maxdepth: 3
