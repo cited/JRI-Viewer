@@ -18,9 +18,7 @@ You can a Context ares to any report.
 
 A Context area provides supporting information, links, and any other HTML content you wish to add.
 
-.. image:: _static/Add-Report.png
-
-
+.. image:: Context-1.png
 
 Add Context
 ================
@@ -29,9 +27,15 @@ To add a new Context, click the "Add New" button at top.
 
 Select the report from the drop down menu as show below:
 
-.. image:: _static/Context-2.png
+.. image:: Context-2.png
 
-Enter the Context to appear next to the generated report.   
+Enter the Context to appear next to the generated report.  
+
+Edit Context
+======================
+To edit a Context, click the edit link as shown below
+
+.. image:: Set-Context.png
 
 
 
