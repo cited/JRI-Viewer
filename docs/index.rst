@@ -40,7 +40,6 @@ JRI Viewer
 
     resources/css
     resources/security
-    resources/reports.rst
     resources/support
     resources/commercial
     resources/license
