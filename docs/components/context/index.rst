@@ -18,7 +18,7 @@ You can a Context ares to any report.
 
 A Context area provides supporting information, links, and any other HTML content you wish to add.
 
-.. image:: Context-1.png
+.. image:: JRI-Viewer-Context.png
 
 Add Context
 ================
