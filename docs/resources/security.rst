@@ -10,17 +10,8 @@
 Security
 **********************
 
-You can use the `Security Monitor`_ on your installation to address common security issues.
+Like JasperReportsIntegration, JRI Viewer is designed to be used behind a firewall.
 
-.. _`Security Monitor`: https://jripub.davidghedini.com/en/latest/components/security/index.html 
+As the url is not visible, it can be used outside with appropriate precautions.
 
-The above is only meant to address a subset of JRI security areas.
-
-It does not address basic server security such as changing ports, disabling root access, etc...
-
-
-
-.. note::
-    All Tomcat and JRI services are owned and run by user tomcat with minimal privilages. 
-    
    
