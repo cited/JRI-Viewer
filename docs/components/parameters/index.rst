@@ -60,14 +60,10 @@ In the example below, the Values we entered are the Jasper parameters Cost_Great
 
 Edit Parameter
 ===================
-To edit a Parameter entry, click the Edit icon, as shown below:
-
-.. image:: _static/Edit-Report.png
+To edit a Parameter entry, click the Edit icon
 
 Delete Parameter
 ===================
-To delete a Parameter entry, click the Delete icon, as shown below:
-
-.. image:: _static/Edit-Report.png
+To delete a Parameter entry, click the Delete icon
 
 
