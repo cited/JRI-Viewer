@@ -14,90 +14,58 @@ Reports
 Overview
 ==================
 
-You can view, add, and edit reports via the Reports tab.
-
-.. image:: ../../_static/reports-tab.png
-
-This will open the screen below.  
+You can view, add, and edit reports via the Reports menu.
 
 .. image:: _static/Add-Report.png
 
-As we can see above, the creation of our NewReports Directory has been added to the directory structure.  This is true for all directories and sub directories added.
 
-Dashboard Layout
+
+Add New Report
 ================
 
-Expanding the NewReports directory, we see below:
+To add a new report, click the "Add New" button at top.
 
-.. image:: _static/report-dashboard-item.png
+Enter the following information:
+
+* url	
+* Report	
+* Data Souce	
+* Download Only 
+* File Name	
+* Name	
+* Description	
+* Access Groups	
+* Grouped Report
 
 
-Dashboard Functions
+Url
 ===================
+Full url to your JRI installation
 
-**Name**::
+Report
+===================
+This is the name of the jrxml file
 
- Clicking on the report name will open the .jrxml file for editing, as shown below:
- 
-.. image:: _static/reports-edit-jrxml.png
- 
- 
-**Actions**::
-      
-Run:  Runs the report on demand.
+Data Source
+===================
+The JRI Data Source name
 
-.. image:: _static/reports-actions.gif
+Download Only
+===================
+The Download Only option is used primarily for two reasons.
 
+1.  The report contains charts which do not render in HTML
+2.  You want the chart to be downloaded immediately.
 
-Clean: Opens a new window to delete any reports you may wish to delete
+Name
+===================
+This is the name you wish to appear in the dashboard
 
-.. image:: _static/reports-cleaner.png 	
+Descruption 
+===================
+This is the description that will appear in the dashboard
 
-Download:  Opens a new window to download selected report(s) in .zip or .bgz format.
-
-.. image:: _static/reports-downloader.png 	
-
-
-**SchID**::
-
-Link to edit the Schedule for the report
-
-**Cron**::
-
-Displays the cron in use for the Schedule
- 
-**Format**::
-
-Displays the report format (e.g. pdf, csv, etc...)
-
-**Data Source**::
-
-Displays report Data Source
-
-**Output**::
-
-Clicking the Browse button will open the report directory in the File Manager as shown below:
-
-.. image:: _static/reports-browse.png
-
-
-**Email**::
-
-Displays report email recipient(s).
-
-**Optional Params**::
-
-Displays any URL Parameters the report is using.
-
-
-No Schedule
-===========
-
-.. note::
-    Any report that does not have a schedule will show the Scheduler icon in the Actions menu.  To add a Schedule, click the icon as shown below.
-
- 
-.. image:: _static/reports-no-schedule.png
-
-   
+Grouped Report
+===================
+Report is part of Grouped Report   
 
