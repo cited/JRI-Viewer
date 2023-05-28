@@ -14,13 +14,13 @@ Reports
 Overview
 ==================
 
-Click the Reports tab to open the Reports Dashboard.
+You can view, add, and edit reports via the Reports tab.
 
-.. image:: _static/reports-tab.png
+.. image:: ../../_static/reports-tab.png
 
 This will open the screen below.  
 
-.. image:: _static/report-dashboard.png
+.. image:: _static/Add-Report.png
 
 As we can see above, the creation of our NewReports Directory has been added to the directory structure.  This is true for all directories and sub directories added.
 
