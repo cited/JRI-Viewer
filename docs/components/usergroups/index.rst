@@ -18,7 +18,7 @@ Report permissions are granted to User Groups.
 Add New Group
 ================
 
-To add a new report, click the "Add New" button at top.
+To add a new Group, click the "Add New" button at top.
 
 Enter the following information:
 
@@ -37,12 +37,12 @@ Edit Group
 
 To edit a group, click the Edit icon, as shown below:
 
-.. image:: _static/Edit-Report.png
+.. image:: Groups-1.png
 
 
 Delete Group
 ===================
-To delete a report entry, click the Delete icon, as shown below:
+To delete a report entry, click the Delete icon.
 
 
 
