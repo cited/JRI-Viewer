@@ -216,7 +216,7 @@ if($user->accesslevel == 'Admin') {
             ?>
 
           <div class="col">
-            <a href="<?=$row['url']?>" style="text-decoration:none; color: #6c757d!important; font-size: 1.15rem; font-weight: 300;">
+            <a href="<?=$row['url']?>" target="_blank" style="text-decoration:none; color: #6c757d!important; font-size: 1.15rem; font-weight: 300;">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title" style="font-size: 15px; font-weight: 800;"><?=$row['url']?></h5>
