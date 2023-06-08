@@ -7,6 +7,7 @@
 			array('show_input.php', 		'comment-account-outline', 	'Report Contexts'),
 			array('groups.php', 				'group',										'Report Groups'),
 			array('parameters.php', 		'filter', 									'Parameters'),
+			array('links.php', 					'account-settings-variant', 'Links'),
 			array('users.php', 					'account-settings-variant', 'Users'),
 			array('access_groups.php',	'account-multiple', 				'User Groups'),
 			array('../index.php',				'exit-to-app',							'Front End'),

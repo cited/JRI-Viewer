@@ -81,6 +81,18 @@
 						}
             return $rv;
         }
+				
+				function getGroupLinks($gids){
+						$rv = array();
+
+						$sql = "select id,url from public.links WHERE id in (SELECT link_id from public.link_access where access_group_id IN (".implode(',', $gids)."))";
+						$result = pg_query($this->dbconn, $sql);
+
+						while ($row = pg_fetch_assoc($result)) {
+							$rv[$row['id']] = $row['url'];
+						}
+            return $rv;
+        }
 
         function getGroupById($id){
             $sql ="select * from public." .$this->table_name . " where id='".intval($id)."'";

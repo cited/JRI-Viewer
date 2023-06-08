@@ -155,6 +155,36 @@ CREATE SEQUENCE public.user_id_seq
     CACHE 1;
 
 ALTER SEQUENCE public.user_id_seq OWNED BY public.user.id;
+
+CREATE TABLE public.links (
+    id integer NOT NULL,
+    url character varying(250)
+);
+
+CREATE TABLE public.link_access (
+    id integer NOT NULL,
+    link_id integer NOT NULL,
+    access_group_id integer NOT NULL
+);
+
+CREATE SEQUENCE public.link_access_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.link_access_id_seq OWNED BY public.link_access.id;
+
+CREATE SEQUENCE public.link_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
 ALTER TABLE ONLY public.access_groups ALTER COLUMN id SET DEFAULT nextval('public.access_groups_id_seq'::regclass);
 ALTER TABLE ONLY public.group_access ALTER COLUMN id SET DEFAULT nextval('public.group_access_id_seq'::regclass);
 ALTER TABLE ONLY public.groups ALTER COLUMN id SET DEFAULT nextval('public.groups_id_seq'::regclass);
@@ -162,6 +192,9 @@ ALTER TABLE ONLY public.jasper ALTER COLUMN id SET DEFAULT nextval('public.jespe
 ALTER TABLE ONLY public.report_access ALTER COLUMN id SET DEFAULT nextval('public.report_access_id_seq'::regclass);
 ALTER TABLE ONLY public.user ALTER COLUMN id SET DEFAULT nextval('public.user_id_seq'::regclass);
 ALTER TABLE ONLY public.user_access ALTER COLUMN id SET DEFAULT nextval('public.user_access_id_seq'::regclass);
+
+ALTER TABLE ONLY public.links ALTER COLUMN id SET DEFAULT nextval('public.link_id_seq'::regclass);
+ALTER TABLE ONLY public.link_access ALTER COLUMN id SET DEFAULT nextval('public.link_access_id_seq'::regclass);
 
 -- password is 1234
 INSERT INTO public.user VALUES
