@@ -219,11 +219,12 @@
                         <nav aria-label="breadcrumb">
 
                           </nav>
-                        <h1 class="mb-0 fw-bold">Users</h1>
+                        <h1 class="mb-0 fw-bold">Links</h1>
                     </div>
                     <div class="col-6">
                         <div class="text-end upgrade-btn">
-													<a href="registration.php" class="btn btn-info btn-md active" role="button" aria-pressed="true">Add User</a>
+													<button type="button" class="btn btn-primary text-white add-new">
+														<i class="fa fa-plus"></i> Add New </button><br>
                         </div>
                     </div>
                 </div>
