@@ -246,9 +246,9 @@
 							<td><?=$lnk->id?> </td>
 							<td><?= $lnk->url?></td>
 								<?php
-									$usr_acc_grps = $obj->getUserAccessGroups($user->id);
-									$grp_ids = implode(',',array_keys($usr_acc_grps));
-									$grp_names = implode(',',array_values($usr_acc_grps));
+									$lnk_acc_grps = $obj->getUserAccessGroups($lnk->id);
+									$grp_ids = implode(',',array_keys($lnk_acc_grps));
+									$grp_names = implode(',',array_values($lnk_acc_grps));
 								?>
 							<td data-type="select" data-value="<?=$grp_ids?>"><?=$grp_names?></td>
 
